@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+void main(){
+  runApp(const MYAPP());
+}
+class MYAPP extends StatelessWidget{
+  const MYAPP({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Responsive UI',
+      home: const Responsive()
+    );
+  }
+}
+class Responsive extends StatelessWidget{
+  const Responsive({super.key});
+  @override
+  Widget build(BuildContext context){
+    double screenw=MediaQuery.of(context).size.width;
+    if(screenw<=600)
+      return Mobile();
+    else if(screenw>600 && screenw<=1200)
+      return Tablet();
+    else
+      return Desktop();
+  }
+}
+class Mobile extends StatefulWidget{
+  const Mobile({super.key});
+  @override
+  State<Mobile> createState() => _MobileState();
+}
+class Tablet extends StatelessWidget{
+  const Tablet({super.key});
+  @override
+  Widget build(BuildContext x){
+    return Scaffold(
+      appBar:AppBar(title: Text('Tablet')),
+      body:Center(
+        child: Icon(Icons.tablet),
+      )
+    );
+  }
+}
+class Desktop extends StatelessWidget{
+  const Desktop({super.key});
+  @override
+  Widget build(BuildContext x){
+    return Scaffold(
+        appBar:AppBar(title: Text('Desktop')),
+        body:Center(
+          child: Icon(Icons.desktop_mac_outlined),
+        )
+    );
+  }
+}
+class _MobileState extends State<Mobile> {
+  @override
+  Widget build(BuildContext context) { // Corrected parameter name
+    return Scaffold(
+      appBar: AppBar(title: const Text('Mobile')), // Added const
+      body: const Center(
+        child: Icon(Icons.mobile_off),
+      ),
+    );
+  }
+}
