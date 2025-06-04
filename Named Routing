@@ -1,0 +1,274 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/about': (context) => AboutScreen(),
+        '/achievements': (context) => Achievements(),
+        '/contacts': (context) => ContactsScreen(),
+      },
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Home')),
+      body: Center(
+          child:Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children:[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  child: Text('Home'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('About'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Achievements'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/achievements');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Contact'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/contacts');
+                  },
+                ),
+              ],
+            ),
+            SizedBox(width: 20,height: 20,)
+            Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.pink,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                  ),
+                ],
+                  border:Border.all(color: Colors.black26)
+
+              ),
+              child: Center(
+                child: Text(
+                    "You are in Home Page"
+                ),
+              ),
+            )          ]
+      ),
+    ),
+    );
+  }
+}
+
+class AboutScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('About')),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                ElevatedButton(
+                  child: Text('Home'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('About'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Achivements'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/achievements');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Contact'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/contacts');
+                  },
+                ),
+              ],
+            ),
+            Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                  ),
+                ],
+                  border:Border.all(color: Colors.black26)
+
+              ),
+              child: Center(
+                child: Text(
+                    "You are in About Page"
+                ),
+              ),
+            )
+          ]
+      ),
+    );
+  }
+}
+
+class ContactsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Contacts")),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                ElevatedButton(
+                  child: Text('Home'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('About'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Achivements'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/achievements');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Contact'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/contacts');
+                  },
+                ),
+              ],
+            ),
+            Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.yellow,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                  ),
+                ],
+                  border:Border.all(color: Colors.black26)
+
+              ),
+              child: Center(
+                child: Text(
+                  "You are in Contacts Page"
+                ),
+              ),
+            )
+          ]
+      ),
+    );
+  }
+}
+
+class Achievements extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Achievements")),
+      body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              children: [
+                ElevatedButton(
+                  child: Text('Home'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('About'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Achievements'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/achievements');
+                  },
+                ),
+                ElevatedButton(
+                  child: Text('Contact'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/contacts');
+                  },
+                ),
+              ],
+            ),
+            Container(
+              height: 400,
+              width: 400,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.green,
+                  ),
+                ],
+                  border:Border.all(color: Colors.black26)
+              ),
+              child: Center(
+                child: Text(
+                    "You are in Achievements Page"
+                ),
+              ),
+            )
+          ]
+      ),
+    );
+  }
+}
